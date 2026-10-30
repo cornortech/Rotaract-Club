@@ -74,7 +74,7 @@ node -e "console.log(require('crypto').randomBytes(48).toString('base64url'))"
 | `INTERNAL_SECRET` | second secret |
 | `ADMIN_EMAIL` | the email you will log in with |
 | `ADMIN_PASSWORD` | a first password (min 8 characters — you will change it later) |
-| `FRONTEND_URL` | leave as `http://localhost:3000` for now (you will change it in Part F) |
+| `FRONTEND_URL` | leave as `rotaract-xi.vercel.app` for now (you will change it in Part F) |
 
 5. Click **Deploy**. When done, copy the address, e.g. `https://rotaract-backend.vercel.app`.
 6. Test it: open `https://rotaract-backend.vercel.app/api/health` → you should see `{"ok":true}`.
@@ -139,9 +139,9 @@ npm run dev                 # runs on https://rotaract-club-rwb4.onrender.com
 cd frontend
 npm install
 cp .env.example .env.local  # BACKEND_URL=https://rotaract-club-rwb4.onrender.com, same INTERNAL_SECRET
-npm run dev                 # open http://localhost:3000
+npm run dev                 # open rotaract-xi.vercel.app
 ```
-For local use, set `FRONTEND_URL=http://localhost:3000` in `backend/.env`.
+For local use, set `FRONTEND_URL=rotaract-xi.vercel.app` in `backend/.env`.
 
 ---
 

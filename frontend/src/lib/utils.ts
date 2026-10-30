@@ -25,7 +25,7 @@ export function paragraphs(text?: string) {
 }
 
 export function siteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+  return (process.env.NEXT_PUBLIC_SITE_URL || "rotaract-xi.vercel.app").replace(/\/$/, "");
 }
 
 export function initials(name: string) {

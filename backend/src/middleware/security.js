@@ -18,7 +18,7 @@ export function clientIp(req) {
 }
 
 export function allowedOrigins() {
-  return (process.env.FRONTEND_URL || "http://localhost:3000")
+  return (process.env.FRONTEND_URL || "rotaract-xi.vercel.app")
     .split(",")
     .map((s) => s.trim().replace(/\/$/, ""))
     .filter(Boolean);

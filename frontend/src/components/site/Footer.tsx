@@ -66,8 +66,15 @@ export default function Footer({ s }: { s: SiteSettings }) {
             )}
           </ul>
           <div className="mt-6 rounded-2xl border border-line bg-white p-4 text-sm leading-6 text-muted">
-            <p className="font-semibold text-ink">{s.district}</p>
-            {sponsor && <p>Sponsored by {sponsor}</p>}
+            Technical support:{" "}
+            <a
+              href="https://cornortech.com"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-brand hover:underline"
+            >
+              Cornor Tech Pvt. Ltd
+            </a>
           </div>
         </div>
       </div>

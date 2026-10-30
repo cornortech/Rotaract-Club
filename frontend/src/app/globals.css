@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #d41367;
+  --color-brand-50: #fff3f8;
+  --color-brand-100: #fde3ee;
+  --color-brand-200: #f9bfd6;
+  --color-brand-600: #b80f58;
+  --color-brand-700: #950c47;
+  --color-gold: #f7a81b;
+  --color-gold-50: #fff7e6;
+  --color-gold-100: #feecc4;
+  --color-gold-700: #a86a00;
+  --color-azure: #17458f;
+  --color-azure-50: #eef4ff;
+  --color-ink: #1d1a2b;
+  --color-muted: #5e5a6e;
+  --color-line: #efe7ec;
+  --color-cream: #fffaf6;
+
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+
+  --shadow-soft: 0 1px 2px rgb(29 26 43 / 0.04), 0 8px 24px -12px rgb(29 26 43 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(29 26 43 / 0.04), 0 24px 48px -20px rgb(212 19 103 / 0.25);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    overflow-x: clip; /* never allow sideways scrolling on phones */
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--color-brand-100);
+    color: var(--color-brand-700);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] text-brand uppercase;
+  &::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-gold;
+  }
+}
+@utility h-display {
+  @apply font-display font-semibold tracking-tight text-ink;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+}
+@utility btn-primary {
+  @apply btn bg-brand text-white shadow-[0_10px_24px_-10px_rgb(212_19_103/0.7)] hover:-translate-y-0.5 hover:bg-brand-600;
+}
+@utility btn-outline {
+  @apply btn border border-line bg-white text-ink hover:-translate-y-0.5 hover:border-brand-200 hover:text-brand;
+}
+@utility btn-soft {
+  @apply btn bg-brand-50 text-brand hover:bg-brand-100;
+}
+@utility card {
+  @apply rounded-3xl border border-line bg-white shadow-soft;
+}
+@utility link-arrow {
+  @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition hover:gap-2.5;
+}
+@utility prose-club {
+  & p {
+    @apply mb-5 text-[1.0625rem] leading-8 text-muted;
+  }
+}
+
+/* Gentle reveal-on-scroll (only when JavaScript is running) */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0ms);
+}
+html.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-slow { animation: float-slow 7s ease-in-out infinite; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  .float-slow { animation: none; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

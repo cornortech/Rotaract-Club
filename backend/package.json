@@ -1,0 +1,30 @@
+{
+  "name": "rotaract-butwal-synergy-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API for the Rotaract Club of Butwal Synergy website (Express + MongoDB + Cloudinary)",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "reset-admin": "node scripts/reset-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.11.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "helmet": "^8.3.0",
+    "jose": "^6.2.14",
+    "mongoose": "^8.24.7",
+    "morgan": "^1.12.1",
+    "multer": "^2.5.0",
+    "zod": "^4.6.7"
+  }
+}

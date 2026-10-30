@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== "production";
 // Only force HTTPS for sub-resources when the site itself runs on https.
-const httpsSite = !(process.env.NEXT_PUBLIC_SITE_URL || "").startsWith("http://");
+const httpsSite = !(process.env.SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || "").startsWith("http://");
 
 // Content-Security-Policy: only allow what the site actually uses.
 const csp = [

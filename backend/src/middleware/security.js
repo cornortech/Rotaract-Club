@@ -18,7 +18,7 @@ export function clientIp(req) {
 }
 
 export function allowedOrigins() {
-  return (process.env.FRONTEND_URL || "rotaract-xi.vercel.app")
+  return (process.env.FRONTEND_URL || "https://rotaract-xi.vercel.app/")
     .split(",")
     .map((s) => s.trim().replace(/\/$/, ""))
     .filter(Boolean);

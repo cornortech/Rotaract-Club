@@ -5,5 +5,5 @@ Express + MongoDB + Cloudinary. See the main **README.md** one folder up for the
 ```bash
 npm install
 cp .env.example .env   # fill in the values
-npm run dev            # http://localhost:4000
+npm run dev            # https://rotaract-club-rwb4.onrender.com
 ```

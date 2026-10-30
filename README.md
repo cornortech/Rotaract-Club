@@ -131,14 +131,14 @@ Open **two** terminals.
 cd backend
 npm install
 cp .env.example .env        # then open .env and fill in the values
-npm run dev                 # runs on http://localhost:4000
+npm run dev                 # runs on https://rotaract-club-rwb4.onrender.com
 ```
 
 **Terminal 2 — frontend**
 ```bash
 cd frontend
 npm install
-cp .env.example .env.local  # BACKEND_URL=http://localhost:4000, same INTERNAL_SECRET
+cp .env.example .env.local  # BACKEND_URL=https://rotaract-club-rwb4.onrender.com, same INTERNAL_SECRET
 npm run dev                 # open http://localhost:3000
 ```
 For local use, set `FRONTEND_URL=http://localhost:3000` in `backend/.env`.

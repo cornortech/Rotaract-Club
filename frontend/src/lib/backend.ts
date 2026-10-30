@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 
 /** Address of the backend API (no trailing slash). */
 export function backendUrl() {
-  return (process.env.BACKEND_URL || "http://localhost:4000").replace(/\/$/, "");
+  return (process.env.BACKEND_URL || "https://rotaract-club-rwb4.onrender.com").replace(/\/$/, "");
 }
 
 export const SESSION_COOKIE = "rbs_admin";

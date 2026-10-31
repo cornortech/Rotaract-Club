@@ -69,14 +69,10 @@ export default function Footer({ s }: { s: SiteSettings }) {
   <div className="rounded-2xl border border-line bg-white p-4 text-sm leading-6 text-muted">
     <p className="font-semibold text-ink">{s.district}</p>
     {sponsor && <p className="mt-1">Sponsored by {sponsor}</p>}
-    
-    <div className="mt-3 border-t border-line pt-3">
-      <p className="font-medium text-ink">Rotaract District 3292 · Nepal–Bhutan</p>
-    </div>
   </div>
 
   <div className="rounded-2xl border border-line bg-white p-4 text-sm leading-6 text-muted">
-    <p className="text-xs uppercase tracking-wider text-muted font-medium">Technical support</p>
+    <p className="text-xs uppercase tracking-wider text-muted font-medium">Technical support:</p>
     <a
       href="https://cornortech.com/"
       target="_blank"
